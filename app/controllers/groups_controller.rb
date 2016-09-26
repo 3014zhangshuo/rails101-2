@@ -11,6 +11,7 @@ def new
  end
  def show
    @group = Group.find(params[:id])
+   @posts = @group.posts
  end
  def edit
 
@@ -27,7 +28,7 @@ def create
  end
 end
 def update
-   
+
    if @group.update(group_params)
      redirect_to groups_path, notice: "Update Success"
    else
